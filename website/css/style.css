@@ -1,0 +1,228 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.container {
+    height:auto;
+    width: auto;
+}
+
+.header {
+    padding: 20px;
+    height:auto;
+    width: auto;
+    background: #131921;
+    position: relative;
+}
+
+.title {
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+    position: absolute;
+    right: 200px;
+    top: 40px
+}
+
+.center {
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 30px;
+    font-size: 2.5vw;
+    background: repeating-linear-gradient(45deg, orange, red, orange);
+
+}
+
+.menu {
+    height:auto;
+    width: auto;
+    background: gray;
+    /* margin-top: 10px; */
+
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0px;
+    display: flex;
+    gap: 10px;
+
+    & li {
+        display: inline-block;
+        padding: 10px;
+        background: #131921;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    & li:hover {
+        background: #232F3E;
+    }
+
+    & li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    & li a:hover {
+        color: orange;
+    }
+}
+
+.slider {
+    height: 300px;
+    width: 100%;
+    background: url('../images/s3.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: slider 5s infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes slider {
+    0% {
+        background: url('../images/s3.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    25% {
+        background: url('../images/a1.jpeg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    50% {
+        background: url('../images/b1.jpeg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    75% {
+        background: url('../images/s8.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.Cards {
+    height:auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    margin-top: 10px;
+    /* background: gainsboro; */
+}
+.cname{border:1px solid black;
+& img{height:300px; width:100%; max-width:100%;}
+}
+.content{padding:10px; text-align: center; line-height:30px;}
+
+.bcenter{height:auto; width:auto;}
+.left{float:left; width:30%; padding: 20px; margin-top:20px;}
+#mylist{height:50px;background:orange; text-align: center; line-height:30px; font-size:20px; font-weight:bold;}
+.left li{list-style: none; padding:10px; margin-top:10px; background:lightseagreen; text-align:center;
+& a{color:white; text-decoration: none; font-weight:bold;}
+    
+}
+.right{float: left; text-align:justify; margin-top:20px; height: fit-content; width:70%; padding:20px;}
+p{margin-top:20px;}
+
+.footer{height:100px; width: auto; background:gray; }
+
+
+
+
+/* Media Queries for Responsive Design */
+
+
+@media only screen and (max-width:1200px) {
+    .header {
+        grid-template-columns: auto auto auto auto;
+    }
+    .bcenter{width:100%; grid-template-columns:auto auto;}
+
+    .title {
+        right: 200px;
+    }
+
+    .slider {
+        width: 100%;
+    }
+    .Cards{grid-template-columns:auto auto auto auto ;}
+}
+
+@media only screen and (max-width:992px) {
+    .header {
+        grid-template-columns: auto auto auto;
+    }
+    .bcenter{width:100%; grid-template-columns:auto auto;}
+
+    .title {
+        right: 70px;
+    }
+    .Cards{grid-template-columns:auto auto auto ;}
+}
+
+@media only screen and (max-width:768px) {
+    .header {
+        grid-template-columns: auto auto;
+    }
+    .bcenter{width:100%; grid-template-columns:auto;}
+
+    .title {
+        right: 50px;
+    }
+    .Cards{grid-template-columns:auto;}
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:567px) {
+    .header {
+        grid-template-columns: auto;
+        text-align: center;
+    }
+    .bcenter{width:100%; grid-template-columns:auto;}
+    .Cards{grid-template-columns:auto;}
+
+    .title {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+
+    }
+
+    .center {
+        text-align: center;
+        margin-top: 43px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+}
